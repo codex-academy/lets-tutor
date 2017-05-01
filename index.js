@@ -14,6 +14,8 @@ app.get('/', function(req, res){
     res.send('LetsTutor');
 });
 
+app.use(express.static('public'));
+
 app.get('/subjects', subjectRoutes.index);
 app.get('/subjects/add/:subject', subjectRoutes.add);
 
