@@ -1,5 +1,6 @@
 const express = require('express');
 const exphbs = require('express-handlebars');
+const bodyParser = require('body-parser');
 
 const SubjectRoutes = require('./subjects');
 
@@ -16,8 +17,15 @@ app.get('/', function(req, res){
 
 app.use(express.static('public'));
 
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }));
+
+// parse application/json
+app.use(bodyParser.json());
+
 app.get('/subjects', subjectRoutes.index);
-app.get('/subjects/add/:subject', subjectRoutes.add);
+app.get('/subjects/add', subjectRoutes.addScreen);
+app.post('/subjects/add', subjectRoutes.add);
 
 const port = 3007;
 
