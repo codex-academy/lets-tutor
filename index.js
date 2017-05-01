@@ -1,6 +1,8 @@
 const express = require('express');
 const exphbs = require('express-handlebars');
 const bodyParser = require('body-parser');
+const flash = require('express-flash');
+const session = require('express-session');
 
 const SubjectRoutes = require('./subjects');
 
@@ -22,6 +24,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 // parse application/json
 app.use(bodyParser.json());
+
+app.use(session({ secret: 'keyboard cat', cookie: { maxAge: 60000 * 30 }}));
+app.use(flash());
 
 app.get('/subjects', subjectRoutes.index);
 app.get('/subjects/add', subjectRoutes.addScreen);

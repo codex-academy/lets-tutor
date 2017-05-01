@@ -19,6 +19,8 @@
   "homepage": "https://github.com/codex-academy/lets-tutor#readme",
   "dependencies": {
     "body-parser": "^1.17.1",
-    "express": "^4.15.2"
+    "express": "^4.15.2",
+    "express-flash": "git://github.com/RGBboy/express-flash.git",
+    "express-session": "^1.15.2"
   }
 }

@@ -11,6 +11,14 @@ body {
     font-family: "Arial"
 }
 
+.error {
+    color : red;
+}
+
+.success {
+    color : lightgreen;
+}
+
 .header {
     display: inline;
 }

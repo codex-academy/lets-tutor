@@ -19,8 +19,17 @@ module.exports = function(){
             return currentSubject === subject;
         });
 
-        if (subject && !foundSubject){
-            subjectList.push(subject);
+        if (!subject){
+            req.flash('error', 'Subject should not be blank')
+        }
+        else{
+            if (!foundSubject){
+                subjectList.push(subject);
+                req.flash('success', 'Subject added!');
+            }
+            else{
+                req.flash('error', 'Subject already exists!');
+            }
         }
 
         res.redirect('/subjects');

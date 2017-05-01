@@ -1,5 +1,20 @@
 <h1>Subjects</h1>
 
+{{#if messages.error}}
+<div class="error">
+    {{messages.error}}
+    <br>
+    <br>
+</div>
+{{/if}}
+{{#if messages.success}}
+<div class="success">
+    {{messages.success}}
+    <br>
+    <br>
+</div>
+{{/if}}
+
 <a href="/subjects/add">Add subject</a>
 
 <ul>
