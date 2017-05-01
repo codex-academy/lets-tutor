@@ -24,11 +24,6 @@ module.exports = function(models){
             name : req.body.subject
         };
 
-
-        // var foundSubject = subjectList.find(function(currentSubject){
-        //     return currentSubject === subject;
-        // });
-
         if (!subject || !subject.name){
             req.flash('error', 'Subject should not be blank')
         }
@@ -42,7 +37,6 @@ module.exports = function(models){
 
             });
 
-            
         }
 
     }
