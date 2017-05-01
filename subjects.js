@@ -25,20 +25,25 @@ module.exports = function(models){
         };
 
         if (!subject || !subject.name){
-            req.flash('error', 'Subject should not be blank')
+            req.flash('error', 'Subject should not be blank');
+            res.redirect('/subjects');
         }
         else{
             models.Subject.create(subject, function(err, results){
                 if (err){
-                    return next(err);
+                    if (err.code === 11000){
+                        req.flash('error', 'Subject already exists!');
+                    }
+                    else{
+                        return next(err);
+                    }
                 }
-                req.flash('success', 'Subject added!');
+                else{
+                    req.flash('success', 'Subject added!');
+                }
                 res.redirect('/subjects');
-
             });
-
         }
-
     }
 
     return {

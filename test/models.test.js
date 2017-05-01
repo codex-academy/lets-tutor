@@ -15,7 +15,6 @@ describe('models should be able to', function(){
         var subjectData = { name : 'The test subject'};
         models.Subject
             .create(subjectData, function(err){
-                //done(err);
 
                 models.Subject.find({ name : 'The test subject'}, function(err, subjects){
                     assert.equal(1, subjects.length);
@@ -25,5 +24,18 @@ describe('models should be able to', function(){
             });
 
         //assert.equal(1,2);
+    });
+
+    it('should not allow duplicate Subjects', function(done){
+        var subjectData = { name : 'The test subject'};
+        models.Subject
+            .create(subjectData, function(err){
+                var subjectData = { name : 'The test subject'};
+                models.Subject
+                    .create(subjectData, function(err){
+                        assert.ok(err, 'Should give an error for duplicate Subjects');
+                        done();
+                    });
+            });
     });
 })
