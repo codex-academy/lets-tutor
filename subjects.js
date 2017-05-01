@@ -3,14 +3,14 @@ module.exports = function(){
     const subjectList = [];
 
     const index = function(req, res){
-        res.send(subjectList);
+        res.render('subjects/index', {subjects : subjectList});
     };
 
     const add = function(req, res){
         //res.send('Add a subject');
 
         var subject = req.params.subject;
-        
+
         var foundSubject = subjectList.find(function(currentSubject){
             return currentSubject === subject;
         });

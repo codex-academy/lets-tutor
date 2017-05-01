@@ -1,9 +1,14 @@
 const express = require('express');
+const exphbs = require('express-handlebars');
+
 const SubjectRoutes = require('./subjects');
 
 const subjectRoutes = SubjectRoutes();
 
 const app = express();
+
+app.engine('handlebars', exphbs({defaultLayout: 'main'}));
+app.set('view engine', 'handlebars');
 
 app.get('/', function(req, res){
     res.send('LetsTutor');
