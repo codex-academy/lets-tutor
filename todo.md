@@ -18,7 +18,7 @@
 
    * What is Middleware?
 
-   * Middleware we wil use
+   * Middleware we will use
 
       * express.static
       * body-parser found [here](https://www.npmjs.com/package/body-parser#examples)
@@ -35,6 +35,12 @@
         * HTTP Get & Post
         * `body-parser` middleware
         * using `req.body`
+
+  * User feedback
+
+        * Show a message when a new Subject is added
+        * `flash` messages
+        * depends on Http Session middleware
 
   * Persisting data
 
