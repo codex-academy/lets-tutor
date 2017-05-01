@@ -5,8 +5,11 @@ const flash = require('express-flash');
 const session = require('express-session');
 
 const SubjectRoutes = require('./subjects');
+const Models = require('./models');
 
-const subjectRoutes = SubjectRoutes();
+const models = Models('mongodb://localhost/tutors');
+
+const subjectRoutes = SubjectRoutes(models);
 
 const app = express();
 
