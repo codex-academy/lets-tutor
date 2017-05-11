@@ -42,10 +42,11 @@ In a terminal window
 Install all the external dependencies using:
 
 ```
+cd let-tutor
 npm install
 ```
 
-Start the application using:
+Start the application in the `lets-tutor` folder using:
 
 ```
 node index.js
