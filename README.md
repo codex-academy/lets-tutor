@@ -29,3 +29,27 @@ Tutors should be able to:
 | /tutors/subject      | Register to tutor a subject  |
 | /search              | Search for a tutor           |
 | /message             | Message tutor                |
+
+
+## Run the application
+
+To run the application you need NodeJS, npm, git and MongoDB installed locally.
+
+Clone this repo from git.
+
+In a terminal window
+
+Install all the external dependencies using:
+
+```
+npm install
+```
+
+Start the application using:
+
+```
+node index.js
+```
+
+
+
